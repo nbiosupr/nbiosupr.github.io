@@ -108,21 +108,30 @@
 
 
 
-  <meta name="keywords" content="develop, student, learning">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cloud Room">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="부제: 구름IDE Node.js 컨테이너에서 파이어베이스 로그인하기. 원격지 Node.js 서버에서 파이어베이스(Firebase)에 로그인하는 방법을 알아 봅시다.">
+<meta name="keywords" content="node.js,Firebase,구름IDE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="원격 서버에서 파이어베이스(Firebase) 로그인">
+<meta property="og:url" content="http://yoursite.com/2018/11/29/remote-firebase/index.html">
 <meta property="og:site_name" content="Cloud Room">
+<meta property="og:description" content="부제: 구름IDE Node.js 컨테이너에서 파이어베이스 로그인하기. 원격지 Node.js 서버에서 파이어베이스(Firebase)에 로그인하는 방법을 알아 봅시다.">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2018/11/29/remote-firebase/img001.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/11/29/remote-firebase/img002.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/11/29/remote-firebase/img003.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/11/29/remote-firebase/img004.jpg">
+<meta property="og:updated_time" content="2018-11-29T15:51:41.965Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cloud Room">
+<meta name="twitter:title" content="원격 서버에서 파이어베이스(Firebase) 로그인">
+<meta name="twitter:description" content="부제: 구름IDE Node.js 컨테이너에서 파이어베이스 로그인하기. 원격지 Node.js 서버에서 파이어베이스(Firebase)에 로그인하는 방법을 알아 봅시다.">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/29/remote-firebase/img001.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/29/remote-firebase/">
 
 
 
@@ -132,7 +141,7 @@
   };
 </script>
 
-  <title>Cloud Room</title>
+  <title>원격 서버에서 파이어베이스(Firebase) 로그인 | Cloud Room</title>
   
 
 
@@ -181,8 +190,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -219,7 +227,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
     <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
   </li>
@@ -279,9 +287,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -313,11 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/29/remote-firebase/" itemprop="url">
-                  원격 서버에서 파이어베이스(Firebase) 로그인
-                </a>
+          <h1 class="post-title" itemprop="name headline">원격 서버에서 파이어베이스(Firebase) 로그인
               
             
           </h1>
@@ -398,19 +402,22 @@
       
 
       
-        
-          <p>부제: 구름IDE Node.js 컨테이너에서 파이어베이스 로그인하기.</p>
+        <p>부제: 구름IDE Node.js 컨테이너에서 파이어베이스 로그인하기.</p>
 <p><strong>원격지 Node.js</strong> 서버에서 <strong>파이어베이스</strong>(Firebase)에 <strong>로그인</strong>하는 방법을 알아 봅시다.</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/11/29/remote-firebase/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
-        
+<a id="more"></a>
+<p>로컬 컴퓨터에서 파이어베이스에 로그인할 때 보통 <code>firebase login</code> 명령어를 사용합니다. 이 명령어를 입력하면 파이어베이스 툴이 주소를 하나 던져줍니다. 우린 그 주소에 들어가서 구글이 요구하는 인증과정을 거쳐 로그인합니다. 하지만 <strong>구름 IDE</strong>와 같은 <strong>원격지 서버</strong>에서 이 과정을 똑같이 진행하면 이런 화면을 마주하게 됩니다.<br><img src="img001.jpg" alt="localhost"></p>
+<p><strong>localhost</strong> 라는 주소로 원격지 서버에 접근할 수 있을리가 없습니다. 따라서 조금 다른 명령어를 사용하여 파이어베이스에 로그인해야 합니다.</p>
+<h2 id="명령어"><a href="#명령어" class="headerlink" title="명령어"></a>명령어</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@goorm# firebase --no-localhost</span><br></pre></td></tr></table></figure>
+<h2 id="인증-과정"><a href="#인증-과정" class="headerlink" title="인증 과정"></a>인증 과정</h2><p>위 명령어를 입력하면 다음과 같은 질문을 합니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@goorm# firebase --no-localhost</span><br><span class="line"></span><br><span class="line">? Allow Firebase to collect anonymous CLI usage and error reporting information?</span><br></pre></td></tr></table></figure></p>
+<p>파이어베이스가 에러 리포트를 수집해도 되는지 여부를 질문하는 것입니다.<br>질문에 답한 후 파이어베이스 툴이 주소를 하나 던져줍니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@goorm# firebase --no-localhost</span><br><span class="line"></span><br><span class="line">? Allow Firebase to collect anonymous CLI usage and error reporting information? Yes</span><br><span class="line"></span><br><span class="line">Visit this URL on any device to log in:</span><br><span class="line">https://accounts.google.com/o/oauth2/auth?client_id=(생략)</span><br></pre></td></tr></table></figure>
+<p>주소를 따라 들어가면 다음과 같은 화면을 보게 됩니다.<br>파이어베이스를 사용하는 계정으로 로그인 하여 계속 가봅시다.</p>
+<p><img src="img002.jpg" alt="계정 선택"></p>
+<p><img src="img003.jpg" alt="신뢰 여부 선택"></p>
+<p>마지막으로 다음과 같은 화면을 보게 됩니다. 코드를 복사하여 콘솔창에 입력하도록 합시다.</p>
+<p><img src="img004.jpg" alt="인증키"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@goorm# firebase --no-localhost</span><br><span class="line"></span><br><span class="line">? Allow Firebase to collect anonymous CLI usage and error reporting information? Yes</span><br><span class="line"></span><br><span class="line">Visit this URL on any device to log in:</span><br><span class="line">https://accounts.google.com/o/oauth2/auth?client_id=(생략)</span><br><span class="line"></span><br><span class="line">? Paste authorization code here: (받은 코드 입력)</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -428,193 +435,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/24/01OverviewOfUML/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nbiosupr">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cloud Room">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/24/01OverviewOfUML/" itemprop="url">
-                  UML - Overview
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-11-24 15:38:58 / Modified: 15:59:21" itemprop="dateCreated datePublished" datetime="2018-11-24T15:38:58+00:00">2018-11-24</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Translate/" itemprop="url" rel="index"><span itemprop="name">Translate</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Translate/UML/" itemprop="url" rel="index"><span itemprop="name">UML</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/node-js/" rel="tag"># node.js</a>
           
-
+            <a href="/tags/Firebase/" rel="tag"># Firebase</a>
           
-            
+            <a href="/tags/구름IDE/" rel="tag"># 구름IDE</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p><strong>UML</strong>은 소프트웨어 시스템의 아티팩트를 규정, 시각화, 구성, 문서화하기 위한 표준 언어입니다.</p>
-<ul>
-<li><strong>UML</strong>은<strong> Unified Modeling Language</strong> 의 약자입니다.</li>
-<li><strong>UML</strong>은 일반적인 프로그래밍 언어와는 다릅니다.</li>
-<li><strong>UML</strong>은 소프트웨어의 청사진을 만드는데 사용되는 그림 언어입니다.</li>
-<li><strong>UML</strong>은 소프트웨어 시스템의 시각화, 규정, 구성, 문서화를 위한 시각적인 모델링 언어를 목표로 합니다.</li>
-<li><strong>UML</strong>은 보통 소프트웨어 시스템을 위해 사용되긴 하지만, 분야에 제한을 두진 않습니다. 소프트웨어가 아닌 시스템에서도 유용하게 사용될 수 있습니다. 예를들어 생산 시설의 프로세스 플로우를 위해서도 사용될 수 있습니다.</li>
-</ul>
-<p><strong>UML</strong>은 프로그래밍 언어가 아닙니다. 다만 <strong>UML 다이어그램</strong>을 이용한다면 다양한 언어의 코드를 만들 수 있습니다. <strong>UML</strong>은 <strong>객체지향 분석과 설계</strong>와 긴밀한 관계를 가지고 있습니다.</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/11/24/01OverviewOfUML/#more" rel="contents">
-                Read more &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/24/01OverviewOfUML/" rel="next" title="UML - Overview">
+                <i class="fa fa-chevron-left"></i> UML - Overview
               </a>
-            </div>
-         
-          <!--/noindex-->
-        
-      
-    </div>
+            
+          </div>
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -624,14 +478,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -652,8 +507,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -762,6 +626,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#명령어"><span class="nav-number">1.</span> <span class="nav-text">명령어</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#인증-과정"><span class="nav-number">2.</span> <span class="nav-text">인증 과정</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -886,6 +766,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
 
   
 
